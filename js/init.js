@@ -9,10 +9,10 @@
 	var settings = {
 
 		// Parallax background effect?
-			parallax: true,
+			parallax: false,
 
 		// Parallax factor (lower = more intense, higher = less intense).
-			parallaxFactor: 20
+			parallaxFactor: 10
 
 	};
 
@@ -92,6 +92,7 @@
 						else {
 
 							$header.css('background-position', 'left 0px');
+							$header.css('background-size', 'auto auto auto');
 
 							$window.on('scroll.strata_parallax', function() {
 								$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');

@@ -7,14 +7,15 @@
 	$size-element-margin:		2em;
 
 // Font.
-	$font-family:				'Source Sans Pro', Helvetica, sans-serif;
+
+	$font-family:				'Raleway', Helvetica, sans-serif;
 	$font-family-fixed:			'Courier New', monospace;
 	$font-weight:				400;
 	$font-weight-bold:			400;
 
 // Color.
 	$color-bg:					#fff;
-	$color-fg:					#a2a2a2;
+	$color-fg: #464646;
 	$color-fg-bold:				#787878;
 	$color-fg-light:			#b2b2b2;
 	$color-border:				#efefef;
@@ -22,7 +23,7 @@
 	$color-border2:				#dfdfdf;
 	$color-border2-bg:			#e7e7e7;
 
-	$color-accent-bg:			#49bf9d;
+	$color-accent-bg: #bf690a;
 	$color-accent-fg:			mix($color-accent-bg, #ffffff, 25%);
 	$color-accent-fg-bold:		#ffffff;
 	$color-accent-fg-light:		mix($color-accent-bg, #ffffff, 40%);
@@ -30,9 +31,9 @@
 	$color-accent-border-bg:	rgba(255,255,255,0.075);
 	$color-accent-border2:		rgba(255,255,255,0.5);
 	$color-accent-border2-bg:	rgba(255,255,255,0.2);
-	
+
 	$color-accent2-bg:			#1f1815;
-	$color-accent2-fg:			rgba(255,255,255,0.5);
+	$color-accent2-fg:			rgba(255,255,255,0.95);
 	$color-accent2-fg-bold:		#ffffff;
 	$color-accent2-fg-light:	rgba(255,255,255,0.4);
 	$color-accent2-border:		rgba(255,255,255,0.25);
