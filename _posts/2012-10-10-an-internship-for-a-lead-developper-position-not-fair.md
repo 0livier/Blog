@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt: A rant about the overuse of trainees in our industry.
+---
+
 As a web entrepreneur, I've been looking closely at the Startup Weekend events
 - I've been a participant myself - and I've kept following some
 successful projects. Among them is Jimmy Fairly, which won the

@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 If you're into Rails or Ruby development, chances are that you'll already play with popular gems like [Capistrano](https://github.com/capistrano/capistrano) or [Omniauth](https://github.com/intridea/omniauth). Here's seven nice gems that you may not known
 
 ## Capistrano Calendar

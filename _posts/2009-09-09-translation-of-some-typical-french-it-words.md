@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 I’m working on a project for deploying J2EE and PHP applications
 and it requires communication with customers in both english and french. This work
 is part of a traditional IT documentation but I had some trouble

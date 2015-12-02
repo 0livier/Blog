@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt: Recent PHP versions change the way to use it and the documentation page can fool people working in 5.3 or below.
+---
+
 [htmlentities\(\)](http://php.net/manual/en/function.htmlentities.php) is a well known PHP function used to convert strings in a HTML-safe representation. Recent PHP versions change the way to use it and the documentation page can fool people working in 5.3 or below.
 
 # A classic escaping

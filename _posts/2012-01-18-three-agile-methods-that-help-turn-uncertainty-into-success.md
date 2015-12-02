@@ -1,3 +1,7 @@
+---
+layout: post
+---
+
 Uncertainty is a constant of projects or companies, whether if you're
 testing business model, receiving incomplete specs from a customer or
 just because unexpected - defects, unforeseen opportunities,

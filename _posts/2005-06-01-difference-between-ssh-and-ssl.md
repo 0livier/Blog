@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt: An answer to Linkedin question "What is the difference between SSH and SSL and how they work together?"
+---
+
 The following is an answer to Linkedin question :
 
 ## "What is the difference between SSH and SSL and how they work together?"

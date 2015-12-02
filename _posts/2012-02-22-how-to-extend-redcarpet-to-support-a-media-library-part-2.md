@@ -1,4 +1,9 @@
-<div class="alert alert-info" style="width:560px">
+---
+layout: post
+excerpt: second half of this two-part tutorial thatexplains how to modify Redcarpet library in order to support images and files of a media library
+---
+
+<div class="alert alert-info">
   <i class="icon-info-sign"></i>
   You're reading the second half of this two-part tutorial that
   explains how to modify Redcarpet library in order to support images

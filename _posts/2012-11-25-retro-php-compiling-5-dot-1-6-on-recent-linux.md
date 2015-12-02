@@ -1,3 +1,12 @@
+---
+layout: post
+excerpt: An unforseen need required me to put a six years old PHP 5.1 application back online for
+         a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the
+         code to make it work on 5.3+ or getting back a system with a running
+         5.1 PHP with its Oracle dependencies, business and team constrainsts
+         made us patch the 5.1 code tree for recent libs.
+---
+
 An unforseen need required me to put a six years old PHP 5.1 application back online for
 a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the
 code to make it work on 5.3+ or getting back a system with a running

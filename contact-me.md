@@ -1,8 +1,0 @@
-Moshi moshi
-
-<p>
-  You can join at <script type="text/javascript">eval(decodeURIComponent('%64%6f%63%75%6d%65%6e%74%2e%77%72%69%74%65%28%27%3c%61%20%68%72%65%66%3d%5c%22%6d%61%69%6c%74%6f%3a%6f%6c%69%76%69%65%72%40%6c%69%6e%75%78%2d%6e%65%72%64%2e%63%6f%6d%5c%22%3e%6f%6c%69%76%69%65%72%40%6c%69%6e%75%78%2d%6e%65%72%64%2e%63%6f%6d%3c%5c%2f%61%3e%27%29%3b'))</script>.
-</p>
-
-See you around.
-

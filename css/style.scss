@@ -5,7 +5,7 @@
 @import 'mixins';
 @import 'font-awesome.min.css';
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400');
 
 /*
 	Strata by HTML5 UP
@@ -14,7 +14,7 @@
 */
 
 $size-header-width:		35%;
-$size-header-pad:		4em;
+$size-header-pad:		2em;
 
 /* Basic */
 
@@ -870,7 +870,7 @@ $size-header-pad:		4em;
 /* Header */
 
 	#header {
-		background-color:		$color-accent2-bg;
+		background-color:		#0f0e0a;
 		background-attachment:	scroll,								fixed;
 		background-image:		url('images/overlay.png'),			url('../images/ny.jpg');
 		background-position:	top left,							top left;
@@ -887,6 +887,7 @@ $size-header-pad:		4em;
 
 		strong, b {
 			color: $color-accent2-fg-bold;
+			display: block;
 		}
 
 		h2, h3, h4, h5, h6 {
@@ -897,7 +898,7 @@ $size-header-pad:		4em;
 			color: #bbb;
 			text-shadow: 1px 1px 1px #000;
 			font-size: 1.15em;
-			line-height: 1.20em;
+			line-height: 1.40em;
 			margin: 0;
 			strong {
 				color: #fff;
@@ -906,9 +907,12 @@ $size-header-pad:		4em;
 				font-family: 'Dancing Script', cursive;
 				font-size: 1.5em;
 				font-weight: 700;
-				line-height: 1.90em;
-				padding-left: 90px;
+				line-height: 1.4em;
+				display:inline-block;
+				margin-bottom: 0.3em;
+				min-width: 50%;
 			}
+
 			div {
 				font-size: 0.8em;
 				margin-top: -10px;
@@ -930,13 +934,13 @@ $size-header-pad:		4em;
 	#footer {
 		bottom: 0;
 		left: 0;
-		padding: 0 $size-header-pad ($size-header-pad / 2) 0;
+		padding: 0 $size-header-pad ($size-header-pad / 4) 0;
 		position: fixed;
 		text-align: right;
 		width: $size-header-width;
-
+		font-size: 0.8em;
 		.icons {
-			margin: ($size-element-margin * 0.5) 0 0 0;
+			margin: ($size-element-margin * 0.0) 0 0 0;
 
 			a {
 				color: $color-accent2-fg-light;
@@ -945,15 +949,15 @@ $size-header-pad:		4em;
 
 		.copyright {
 			color: $color-accent2-fg-light;
-			font-size: 0.8em;
+			font-size: 0.7em;
 			list-style: none;
-			margin: ($size-element-margin * 0.5) 0 0 0;
+			margin: ($size-element-margin * 0.0) 0 0 0;
 			padding: 0;
 
 			li {
 				border-left: solid 1px $color-accent2-border;
 				display: inline-block;
-				line-height: 1em;
+				line-height: 0.5em;
 				margin-left: 0.75em;
 				padding-left: 0.75em;
 
@@ -974,7 +978,7 @@ $size-header-pad:		4em;
 
 	#main {
 		margin-left: $size-header-width;
-		max-width: 50em + $size-header-pad;
+		//max-width: 50em + $size-header-pad;
 		padding: ($size-header-pad * 2) $size-header-pad ($size-header-pad / 2) $size-header-pad;
 		width: calc(100% - #{$size-header-width});
 
@@ -1165,4 +1169,108 @@ $size-header-pad:		4em;
 
 	}
 
+header#header a.hello {
+	border-bottom: none !important;
+	&:hover {
+		color: #fff !important;
+	}
+}
+
 /* Post */
+
+@media only screen and (min-width: 1200px) {
+	.embed-container {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.embed-container {
+		width: 90%;
+	}
+}
+
+
+.embed {
+	position: relative;
+	padding-top: 30px; /* IE6 workaround*/
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 75.18%; /* 16/9 ratio */
+	&.large {
+		padding-bottom: 56.25%; /* 16/9 ratio */
+	}
+}
+
+.embed iframe,
+.embed object,
+.embed embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.post-meta {
+	background-color: #fafafa;
+	border: 1px solid #f1f1f1;
+	color: #999;
+	text-align: center;
+	padding: 5px;
+	float:right;
+	font-size: 0.8em;
+	font-family: Arial;
+	line-height: 15px;
+	margin-top: 8px;
+	span.d {
+		display:block;
+		font-weight: bold;
+	}
+	span.y {
+		display:block;
+	}
+}
+
+body header {
+
+	a.alm {
+		color: #ec3468 !important;
+	}
+	a.etsy {
+		color: #f56400 !important;
+	}
+
+	a:hover {
+		color: #fff;
+	}
+
+	section.nav {
+
+		margin-top: 30px;
+		ul {
+			list-style: none;
+			li {
+				margin-bottom: 5px;
+				a {
+					color: #bbb;
+				}
+			}
+		}
+	}
+}
+
+
+#latest {
+	color: lighten($color-fg-bold, 20%);
+	font-weight: $font-weight-bold;
+	font-size: 1em;
+	line-height: 1.1em;
+	margin: -20px 0 10px 0;
+}
+
+.actions .button {
+	margin-top: 15px !important;
+	margin-bottom: 25px !important;
+}
+

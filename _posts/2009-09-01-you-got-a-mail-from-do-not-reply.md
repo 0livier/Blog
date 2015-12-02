@@ -1,4 +1,9 @@
-Like a lot of people, I receive weekly or monthly opt-in emails from vendors but I’m always surprised it’s from not working address “do-not-reply”. Not very engaging. 
+---
+image: /images/old/mailboxes.jpg
+layout: post
+---
+
+Like a lot of people, I receive weekly or monthly opt-in emails from vendors but I’m always surprisedmailboxes it’s from not working address “do-not-reply”. Not very engaging. 
 
 If you’re sending emails, people look to sender name, and a more friendly “From” would be appreciated. Furthermore, even if the mail contains links, the customer get it in his mail reader. A tool where he’s used to send mail and to respond to mail. Think of a salesman that, after a successul demonstration, would tell you : “Nah, I won’t take your order, please call this number instead”. As those mails are sent to people that suscribed (the company is not doing old fashionned spam bulk emailing), the customer is more likely to have an interest in their product and thus to respond.
 

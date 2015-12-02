@@ -1,3 +1,6 @@
+---
+---
+
 @import 'vars';
 @import 'mixins';
 
@@ -57,7 +60,7 @@ $size-header-pad:		1.5em;
 
 	#header {
 		padding: ($size-header-pad * 1.5) $size-header-pad;
-		
+
 		h1 {
 			font-size: 1.35em;
 		}
@@ -68,7 +71,7 @@ $size-header-pad:		1.5em;
 	#footer {
 		padding: ($size-header-pad * 1.5) $size-header-pad;
 	}
-	
+
 /* Main */
 
 	#main {
@@ -79,12 +82,12 @@ $size-header-pad:		1.5em;
 			padding: ($size-header-pad * 1.5) 0 0 0;
 		}
 	}
-	
+
 /* Poptrox */
 
 	.poptrox-popup {
 		border-radius: 0;
-		
+
 		.nav-next,
 		.nav-previous {
 			&:before {
@@ -92,3 +95,30 @@ $size-header-pad:		1.5em;
 			}
 		}
 	}
+
+.post-meta {
+	float: right;
+	font-size: 0.9em;
+	display: inline;
+	margin-top: 0;
+	span.d {
+		display: inline;
+		font-weight: bold;
+	}
+	span.y {
+		display: inline;
+		margin-left: 5px;
+	}
+}
+
+
+section.nav {
+	li {
+		float:left;
+		width: 33%;
+	}
+}
+
+#header  a.image.avatar {
+	display: none;
+}

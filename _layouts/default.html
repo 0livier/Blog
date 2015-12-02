@@ -7,7 +7,6 @@
   		<meta name="keywords" content="Blog, code, rant, and kitten" />
   		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
   		<script src="/js/jquery.min.js"></script>
-  		<script src="/js/jquery.poptrox.min.js"></script>
   		<script src="/js/skel.min.js"></script>
   		<script src="/js/init.js"></script>
   		<noscript>
@@ -21,16 +20,24 @@
 	<body id="top">
 
       <header id="header">
-          <a href="#" class="image avatar"><img src="/images/me.jpg" alt="Olivier Garcia" /></a>
+          <a href="/" class="image avatar"><img src="/images/me.jpg" alt="Olivier Garcia" /></a>
           <h1>
-              Hello, my name is<br/>
-              <strong>Olivier Garcia</strong><br/>
-              <div>yet another Linux nerd</div>
+              <a href="/" class="hello">
+                  <div>Hello, my name is</div>
+                  <strong>Olivier Garcia</strong>
+                  <div>yet another Linux nerd</div>
+              </a>
               full stack d(ev|ad)<br/>
-              working at <a href="http://etsy.com">Etsy</a>/<a href="http://alittlemarket.fr">A Little Market</a><br/>
+              working at <a class="etsy" href="http://etsy.com">Etsy</a> / <a class="alm" href="http://alittlemarket.fr">A Little Market</a><br/>
           </h1>
+          <section class="nav">
+              <ul>
+                  <li><a href="/what-i-do">What I do</a></li>
+                  <li><a href="/where-i-worked">Where I worked</a></li>
+                  <li><a href="/contact-me">Contact me</a></li>
+              </ul>
+          </section>
       </header>
-
 
         {{ content }}
 
@@ -95,12 +102,11 @@
               {% endif %}
             </ul>
             <ul class="copyright">
-                <small>
                     <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
                     <li>Images: <a href="https://unsplash.com/">Unsplash</a></li>
                     <li>Template: <a href="http://cloudcannon.com">Cloud Cannon</a></li>
-                </small>
             </ul>
+            <p>/Few grams of (code )?poetry in a world of brute(s| force)/</p>
         </footer>
 
 	</body>

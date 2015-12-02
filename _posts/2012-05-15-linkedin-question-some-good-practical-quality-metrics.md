@@ -1,4 +1,7 @@
-Naveen Maram[asked on LinkedIn](http://lol.cat/2G) "What are some good, practical quality metrics for your IT development team that worked in your setting and you have personal experience with?". 
+---
+layout: post
+---
+Naveen Maram [asked on LinkedIn](http://lol.cat/2G) "What are some good, practical quality metrics for your IT development team that worked in your setting and you have personal experience with?". 
 
 As a [software architect](http://yet.another.linux-nerd.com/what-i-do), I've been using metrics to guide me for my code reviews, here is my two cents on the subject.
 

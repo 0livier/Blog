@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt: This article shows how to bootstrap a non web based Symfony app. 
+---
+
 Most of us use Symfony as a PHP Web Development Framework, but its components can be used in non-web environments,
 for instance a standalone command line. This article shows how to bootstrap such applications without unneeded libraries (such as EventDispatcher or HttpKernel)
 and how to package them as a PHAR file for easy redistribution. If you're unfamiliar with Symfony components, head over [http://symfony.com/en/components](http://symfony.com/en/components).

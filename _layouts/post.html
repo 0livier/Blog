@@ -2,54 +2,60 @@
 layout: default
 ---
 <div id="main">
-    <article>
-        <header class="major">
-            <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-            <h2 class="post-title">{{ page.title }}</h2>
-        </header>
 
-        <section>
-            {{ content }}
+        <section class="post">
+            <article>
+                <header class="major">
+                    <p class="post-meta">{{ post.date | date: "<span class='d'>%b %d</span><span class='y'>%Y</span>" }}{% if
+                        page.meta %} • {{ page.meta }}{% endif %}</p>
+
+                    <h2 class="post-title">{{ page.title }}</h2>
+                </header>
+
+                {{ content }}
+            </article>
         </section>
 
-        <footer>
-            <div class="row">
-            {% if page.previous %}
+        <section>
+            <h2>See also</h2>
 
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
-                    <header>
-                        <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.previous.excerpt }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ page.previous.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
+            <footer>
+                <div class="row">
+                    {% if page.previous %}
 
-            {% if page.next %}
+                    <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt">
+                        <header>
+                            <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
+                        </header>
+                        <section>
+                            {{ page.previous.excerpt }}
+                        </section>
+                        <footer>
+                            <ul class="actions">
+                                <li><a href="{{ page.previous.url }}" class="button">Read More</a></li>
+                            </ul>
+                        </footer>
+                    </article>
+                    {% endif %}
 
-                <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
-                    <header>
-                        <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
-                    </header>
-                    <section>
-                        {{ page.next.excerpt | markdownify }}
-                    </section>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="{{ page.next.url }}" class="button">Read More</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            {% endif %}
-            </div>
-        </footer>
+                    {% if page.next %}
 
-    </article>
+                    <article class="{% cycle '6u', '6u$' %} 12u(small) excerpt f-right">
+                        <header>
+                            <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
+                        </header>
+                        <section>
+                            {{ page.next.excerpt | markdownify }}
+                        </section>
+                        <footer>
+                            <ul class="actions">
+                                <li><a href="{{ page.next.url }}" class="button">Read More</a></li>
+                            </ul>
+                        </footer>
+                    </article>
+                    {% endif %}
+                </div>
+            </footer>
+        </section>
 
 </div>
