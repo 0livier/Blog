@@ -16,11 +16,14 @@ layout: default
         <h2>See also</h2>
         <div class="row">
             {% for post in site.posts offset:1 limit:2 %}
-            <article class="{% cycle '4u', '4u' %} 12u(small)">
+            <article class="{% cycle '6u', '6u$' %} 12u(small)">
                 <header>
                     <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
                 </header>
                 <section>
+                    {% if post.image %}
+                    <img class="image fit thumb" src="{{ post.image }}" alt=""/>
+                    {% endif %}
                     {{ post.excerpt }}
                 </section>
                 <footer>
@@ -30,9 +33,9 @@ layout: default
                 </footer>
             </article>
             {% endfor %}
-            <div class="4u$ 12u(small) last">
-                <a class="button" href="/blog/">Browse all posts</a>
-            </div>
+        </div>
+        <div>
+            <a class="button" href="/blog/">Browse all posts</a>
         </div>
     </section>
 </div>

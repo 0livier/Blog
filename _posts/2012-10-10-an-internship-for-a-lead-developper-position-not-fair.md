@@ -1,6 +1,7 @@
 ---
 layout: post
 excerpt: A rant about the overuse of trainees in our industry.
+image: /images/old/iStock_000018852459XSmall.jpg
 ---
 
 As a web entrepreneur, I've been looking closely at the Startup Weekend events

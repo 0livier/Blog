@@ -1,6 +1,7 @@
 ---
 layout: post
-excerpt: This article shows how to bootstrap a non web based Symfony app. 
+excerpt: This article shows how to bootstrap a non web based Symfony app.
+image: /images/old/4302504281_02be0d4878_b.jpg
 ---
 
 Most of us use Symfony as a PHP Web Development Framework, but its components can be used in non-web environments,

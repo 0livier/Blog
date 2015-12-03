@@ -1,6 +1,7 @@
 ---
 layout: post
 excerpt: Recent PHP versions change the way to use it and the documentation page can fool people working in 5.3 or below.
+image: /images/old/PHP__htmlentities___Manual.png
 ---
 
 [htmlentities\(\)](http://php.net/manual/en/function.htmlentities.php) is a well known PHP function used to convert strings in a HTML-safe representation. Recent PHP versions change the way to use it and the documentation page can fool people working in 5.3 or below.
@@ -22,17 +23,19 @@ You may recognise typical characters - &Atilde;&copy; - involved in conversion o
 
 When you look at the description of the doc, it says:
 
-![htmlentities function description](6:original:shadow)
+![htmlentities function description](/images/old/9bce0d2d91adcef54229575cdaf5a108130266a9.png)
 
 My developper told me that according to the [documentation page](http://php.net/manual/en/function.htmlentities.php), the function was expecting a UTF-8 string by default, which he provided, so everything should be good. Unfortunatly, it is actually more complicated than that.
 
 # PHP changed with the 5.4 release, including its documentation.
 
-![htmlentities function changelog](8:original:shadow right)
+![htmlentities function changelog](/images/old/2bd84b931919a12a7f8ff9004985c56128d7f3f2.png)
 
 If you scroll down a few pages, you'll see that the PHP version 5.4 has led quite a lot of changes, including the constants or the default settings.
 
-![htmlentities function changelog](7:original:shadow)
+<div style="float:right;">
+![htmlentities function changelog](/images/old/7999e0773b669022911749465dfee90faa0aa942.png)
+</div>
 
 Thus, the default encoding is ISO-8859-1 for versions prior to version 5.4.0 of PHP and UTF-8 from version 5.4.0. Unaware of that, the developper - who was working with PHP 5.3  - remained at the function description and did not specify any encoding (it has always been an optional parameter).
 

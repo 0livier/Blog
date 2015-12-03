@@ -5,6 +5,7 @@ excerpt: An unforseen need required me to put a six years old PHP 5.1 applicatio
          code to make it work on 5.3+ or getting back a system with a running
          5.1 PHP with its Oracle dependencies, business and team constrainsts
          made us patch the 5.1 code tree for recent libs.
+image: /images/old/php-origami-elephant-140811.jpg
 ---
 
 An unforseen need required me to put a six years old PHP 5.1 application back online for
