@@ -25,6 +25,9 @@ permalink: /blog/:title
 gems:
  - jekyll-coffeescript
  - jekyll-paginate
+ - jekyll-sitemap
+ - jemoji
+ - jekyll-mentions
 
 paginate: 5
 
