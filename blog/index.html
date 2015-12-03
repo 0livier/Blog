@@ -2,25 +2,24 @@
 layout: default
 ---
 
-
-<!-- Main -->
 <div id="main">
-    <p>Latest blog post</p>
-        <div class="row">
+    <p>Latest blog posts</p>
+        <div class="row" itemscope itemtype="http://schema.org/Blog">
             {% for post in site.posts %}
-            <article class="{% cycle '6u', '6u$' %} 12u(small)">
+            <article class="{% cycle '6u', '6u$' %} 12u(small)" itemscope itemtype="http://schema.org/BlogPosting">
                 <header>
-                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <h3><a href="{{ post.url | prepend: site.baseurl }}" itemprop="url"><meta itemprop="name">{{ post.title }}</a></a></h3>
+                    <meta itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}"/>
                 </header>
                 {% if post.image %}
                 <img src="{{ post.image }}" alt=""/>
                 {% endif %}
-                <section>
+                <section itemprop="description">
                     {{ post.excerpt }}
                 </section>
                 <footer>
                     <ul class="actions">
-                        <li><a href="{{ post.url }}" class="button">Continue reading <i class="fa fa-arrow-right"></i></a></li>
+                        <li><a href="{{ post.url | prepend: site.baseurl }}" class="button" itemprop="url">Continue reading <i class="fa fa-arrow-right"></i></a></li>
                     </ul>
                 </footer>
             </article>

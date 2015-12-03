@@ -2,18 +2,7 @@
 layout: default
 ---
 <div id="main">
-
-        <section class="post">
-            <article>
-                <header class="major">
-                    <p class="post-meta">{{ post.date | date: "<span class='d'>%b %d</span><span class='y'>%Y</span>" }}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-
-                    <h2 class="post-title">{{ page.title }}</h2>
-                </header>
-
-                {{ content }}
-            </article>
-        </section>
+    {% include post.html page=page %}
 
         <section>
             <h2>See also</h2>

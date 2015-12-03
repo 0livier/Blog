@@ -8,14 +8,8 @@ layout: default
     <section>
         <p id="latest">Latest blog post</p>
         {% for post in site.posts limit:1 %}
-            <header class="major">
-                <p class="post-meta">{{ post.date | date: "<span class='d'>%b %d</span><span class='y'>%Y</span>" }}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-                <h2>{{ post.title }}</h2>
-            </header>
-
-            <section class="post">
-                {{ post.content }}
-            </section>
+            {% assign page = post %}
+            {% include post.html %}
         {% endfor %}
     </section>
     <section class="see-more">

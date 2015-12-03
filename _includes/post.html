@@ -1,0 +1,22 @@
+<section class="post">
+    <article itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="major">
+            <p class="post-meta">{{ page.date | date: "<span class='d'>%b %d</span><span class='y'>%Y</span>" }}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+            <meta itemprop="description" content="{{page.excerpt}}"/>
+            {% if page.image %}
+            <meta itemprop="image" src="{{ page.image }}" alt="{{page.title}}"/>
+            {% endif %}
+            {% if page.tags %}
+            <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
+            {% endif %}
+            {% if page.date %}
+            <meta itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}"/>
+            {% endif %}
+            <h2 class="post-title" itemprop="headline">{{ page.title }}</h2>
+        </header>
+
+        <div itemprop="articleBody">
+            {{ page.content }}
+        </div>
+    </article>
+</section>
