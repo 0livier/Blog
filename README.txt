@@ -4,6 +4,12 @@ master is for the upstream layout of the blog
 wip for work in progress
 gh-pages for published version
 
+```
+bundle install
+bundler exec jekyll serve
+```
+
+
 Credits:
 
     Layout
