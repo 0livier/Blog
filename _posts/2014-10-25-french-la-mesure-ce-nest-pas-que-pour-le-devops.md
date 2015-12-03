@@ -1,5 +1,6 @@
 ---
 layout: post
+title: La mesure, ce n'est pas que pour le devops
 excerpt: Slides of the presentation I gave with [Patrick Allaert](http://twitter.com/patrick_allert) at AFUP's PHP Forum 2014.
 image: /images/old/La_mesure__ce_n_est_pas_que_pour_le_devops___Google_Slides.png
 ---
