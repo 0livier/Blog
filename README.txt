@@ -4,6 +4,17 @@ master is for the upstream layout of the blog
 wip for work in progress
 gh-pages for published version
 
+Deploying :
+
+```
+bundler exec jekyll build && git checkout gh-pages && git rebase wip && git checkout - && git push --all
+```
+or with the t alias in case of tsocks
+
+```
+bundler exec jekyll build && git checkout gh-pages && git rebase wip && git checkout - && t git push --all
+```
+
 ```
 bundle install
 bundler exec jekyll serve
