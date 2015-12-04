@@ -1,5 +1,6 @@
 ---
 layout: post
+title: 3 Agile methods to turn uncertainty into success
 ---
 
 Uncertainty is a constant of projects or companies, whether if you're

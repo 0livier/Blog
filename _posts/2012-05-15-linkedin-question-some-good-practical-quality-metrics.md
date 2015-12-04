@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Some good practical quality metrics?
 ---
 Naveen Maram [asked on LinkedIn](http://lol.cat/2G) "What are some good, practical quality metrics for your IT development team that worked in your setting and you have personal experience with?". 
 

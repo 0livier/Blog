@@ -1,6 +1,7 @@
 ---
 layout: post
 excerpt: second half of this two-part tutorial thatexplains how to modify Redcarpet library in order to support images and files of a media library
+title: Extend redcarpet to support a media library - part 2
 ---
 
 <div class="alert alert-info">

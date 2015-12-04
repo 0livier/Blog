@@ -1,3 +1,7 @@
+---
+title: Extend redcarpet to support a media library - part 1
+---
+
 <div class="alert alert-info">
   <i class="icon-info-sign"></i>
   You're reading the first half of this two-part tutorial that explains how to modify Redcarpet library in order to support images and files of a media library. If you're familiar with RoR or Ruby, you can go straight to <a href="http://yet.another.linux-nerd.com/blog/how-to-extend-redcarpet-to-support-a-media-library-part-2">part two</a>.
