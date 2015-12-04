@@ -1,25 +1,22 @@
 ---
 layout: post
-excerpt: An unforseen need required me to put a six years old PHP 5.1 application back online for
-         a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the
-         code to make it work on 5.3+ or getting back a system with a running
-         5.1 PHP with its Oracle dependencies, business and team constrainsts
-         made us patch the 5.1 code tree for recent libs.
+excerpt: An unforseen need required me to put a six years old PHP 5.1 application back online for a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the code to make it work on 5.3+ or getting back a system with a running 5.1 PHP with its Oracle dependencies, business and team constrainsts made us patch the 5.1 code tree for recent libs.
 image: /images/old/php-origami-elephant-140811.jpg
 ---
+
 
 An unforseen need required me to put a six years old PHP 5.1 application back online for
 a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the
 code to make it work on 5.3+ or getting back a system with a running
-5.1 PHP with its Oracle dependencies, business and team constrainsts
+5.1 PHP with its Oracle dependencies, business and team constraints
 usually give little choice:
 
-* Nearly no budget was available,
-* Most of the coding team were already booked on others projects,
-* Most of them were reluctant to work on old and crapy code,
-* The website is internal only,
-* There's significant incompatibilities between 5.1 and 5.3 ([5.1 to 5.2][5.1 to 5.2], and [5.2 to 5.3][5.2 to 5.3]).
-* The UI is not complex and has nearly no Javascript.
+  * Nearly no budget was available,
+  * Most of the coding team were already booked on others projects,
+  * Most of them were reluctant to work on old and crapy code,
+  * The website is internal only,
+  * There's significant incompatibilities between 5.1 and 5.3 ([5.1 to 5.2](http://www.php.net/manual/en/migration52.incompatible.php), and [5.2 to 5.3](http://www.php.net/manual/en/migration53.incompatible.php)).
+  * The UI is not complex and has nearly no Javascript.
 
 Compilation for a temporary site seemed to be the solution with the lowest duration and risks, however I had to adjust PHP 5.1 a bit to make it work with our recent Centos systems. Here the parts I had to modify :
 
@@ -84,7 +81,5 @@ If you want to add support of recent Oracle client, I strongly suggest you to ig
 bin/pecl install oci8
 ```
 
-[5.1 to 5.2]: http://www.php.net/manual/en/migration52.incompatible.php
-[5.2 to 5.3]: http://www.php.net/manual/en/migration53.incompatible.php
 [Curl include]: https://github.com/bagder/curl/blob/master/include/curl/curl.h
 [PECL]: http://pecl.php.net/

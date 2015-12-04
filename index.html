@@ -8,8 +8,30 @@ layout: default
     <section>
         <p id="latest">Latest blog post</p>
         {% for post in site.posts limit:1 %}
-            {% assign page = post %}
-            {% include post.html %}
+
+        <section class="post">
+            <article itemscope="" itemtype="http://schema.org/BlogPosting">
+                <header class="major">
+                    <p class="post-meta">{{ post.date | date: "<span class='d'>%b %d</span><span class='y'>%Y</span>" }}{% if post.meta %} • {{ post.meta }}{% endif %}</p>
+                    <meta itemprop="description" content="{{post.excerpt}}"/>
+                    {% if post.image %}
+                    <meta itemprop="image" src="{{ post.image }}" alt="{{post.title}}"/>
+                    {% endif %}
+                    {% if post.tags %}
+                    <meta itemprop="keywords" content="{{ post.tags | join: ',' }}" />
+                    {% endif %}
+                    {% if post.date %}
+                    <meta itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}"/>
+                    {% endif %}
+                    <h2 class="post-title" itemprop="headline">{{ post.title }}</h2>
+                </header>
+
+                <div itemprop="articleBody">
+                    {{ post.content }}
+                </div>
+            </article>
+        </section>
+
         {% endfor %}
     </section>
     <section class="see-more">
