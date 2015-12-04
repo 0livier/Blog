@@ -2,7 +2,7 @@
 layout: post
 title: A 10 min. tutorial to PHP x Heroku 
 excerpt: PHP runs well on Heroku. Read on to have a quick introduction to get an application up online fast.
-image: /images/old/A_practical_10m_intro_to_PHP_on_heroku___Google_Slides.png
+image: /images/old/heroku.png
 ---
 <div class="embed-container">
     <div class="embed">

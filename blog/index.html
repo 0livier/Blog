@@ -12,7 +12,7 @@ layout: default
                     <meta itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}"/>
                 </header>
                 {% if post.image %}
-                <img class="image fit thumb" src="{{ post.image }}" alt=""/>
+                <a href="{{ post.url | prepend: site.baseurl }}"><img class="image fit thumb" src="{{ post.image }}" alt=""/></a>
                 {% endif %}
                 <section itemprop="description">
                     {{ post.excerpt }}

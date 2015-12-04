@@ -1,7 +1,7 @@
 ---
 layout: post
 excerpt: The post contains the slides used in Git workshops I gave in Infrabel during 2015.
-image: /images/old/A_practical_30m_intro_to_Git_VCS___Google_Slides.png
+image: /images/old/git.png
 ---
 <div class="embed-container">
     <div class="embed">

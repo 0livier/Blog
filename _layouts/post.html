@@ -16,11 +16,14 @@ layout: default
                             <h2><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h2>
                         </header>
                         <section>
+                            {% if page.previous.image %}
+                            <a href="{{ page.previous.url }}"><img class="image fit thumb" src="{{ page.previous.image }}" alt=""/></a>
+                            {% endif %}
                             {{ page.previous.excerpt }}
                         </section>
                         <footer>
                             <ul class="actions">
-                                <li><a href="{{ page.previous.url }}" class="button">Read More</a></li>
+                                <li><a href="{{ page.previous.url }}" class="button">Continue reading <i class="fa fa-arrow-right"></i></a></li>
                             </ul>
                         </footer>
                     </article>
@@ -33,11 +36,14 @@ layout: default
                             <h2><a href="{{ page.next.url }}">{{ page.next.title }}</a></h2>
                         </header>
                         <section>
+                            {% if page.next.image %}
+                            <a href="{{ page.next.url }}"><img class="image fit thumb" src="{{ page.next.image }}" alt=""/></a>
+                            {% endif %}
                             {{ page.next.excerpt | markdownify }}
                         </section>
                         <footer>
                             <ul class="actions">
-                                <li><a href="{{ page.next.url }}" class="button">Read More</a></li>
+                                <li><a href="{{ page.next.url }}" class="button">Continue reading <i class="fa fa-arrow-right"></i></a></li>
                             </ul>
                         </footer>
                     </article>

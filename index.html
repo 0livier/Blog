@@ -22,7 +22,7 @@ layout: default
                 </header>
                 <section>
                     {% if post.image %}
-                    <img class="image fit thumb" src="{{ post.image }}" alt=""/>
+                    <a href="{{ post.url }}"><img class="image fit thumb" src="{{ post.image }}" alt=""/></a>
                     {% endif %}
                     {{ post.excerpt }}
                 </section>
