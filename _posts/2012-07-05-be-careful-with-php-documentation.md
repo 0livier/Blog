@@ -10,12 +10,12 @@ image: /images/old/PHP__htmlentities___Manual.png
 
 One of the developpers [I am coaching](/what-i-do) told me he had an unexpected behaviour in his [view](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). Eventually, he end up with this code, (written in UTF-8), running on his PHP5.3 environment
 
-```php
+{% highlight php startinline=1 %}
 $string = "I like chocolate éclairs."; // bit.ly/extvJY
 
 echo "as is  :", $string, "\n";
 echo "h()    :", htmlentities($string), "\n";
-```
+{% endhighlight %}
 
 He would have expected something like "I like chocolate &eacute;clairs." and got "I like chocolate &Atilde;&copy;clairs.".
 
@@ -43,13 +43,15 @@ Similarly, the file ext/standard/html.h, which defines constants for the encodin
 
 Here is what the developper and I ended with after looking more carrefully the documentation.
 
-```php
+{% highlight php startinline=1 %}
 $string = "I like chocolate éclairs."; // bit.ly/extvJY
 
 echo "as is     :", $string, "\n";
 echo "h() bad :", htmlentities($string), "\n"; // bad in 5.3 if $string is in utf8
-echo "h() ok  :", htmlentities($string, ENT_COMPAT, 'UTF-8'), "\n"; // good in both 5.3 and 5.4 if $string is in utf8
-```
+
+// following is good in both 5.3 and 5.4 if $string is in utf8
+echo "h() ok  :", htmlentities($string, ENT_COMPAT, 'UTF-8'), "\n"; 
+{% endhighlight %}
 
 # Conclusion
 

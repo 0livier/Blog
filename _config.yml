@@ -30,4 +30,5 @@ gems:
  - jekyll-mentions
 
 paginate: 5
+highlighter: pygments
 

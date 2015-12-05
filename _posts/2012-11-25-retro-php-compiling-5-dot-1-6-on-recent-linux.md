@@ -2,6 +2,7 @@
 layout: post
 excerpt: An unforseen need required me to put a six years old PHP 5.1 application back online for a few weeks in my customer Intranet. Between rewriting or adapt a significant portion of the code to make it work on 5.3+ or getting back a system with a running 5.1 PHP with its Oracle dependencies, business and team constrainsts made us patch the 5.1 code tree for recent libs.
 image: /images/old/php-origami-elephant-140811.jpg
+title: Compiling PHP 5.1.6 on a recent Linux
 ---
 
 
@@ -24,7 +25,7 @@ Compilation for a temporary site seemed to be the solution with the lowest durat
 
 CURLOPT\_FTPASCII was a deprecated constant, alias of CURLOPT\_TRANSFERTEXT and has now been removed from recent [Curl include][Curl include]. The constant must be removed from PHP as sown in the following patch.
 
-```diff
+{% highlight diff %}
 --- /root/php-5.1.6/ext/curl/interface.c.orig 2012-11-15 11:21:54.829741804 +0100
 +++ /root/php-5.1.6/ext/curl/interface.c      2012-11-15 11:22:29.026246504 +0100
 @@ -266,7 +266,7 @@
@@ -45,12 +46,12 @@ CURLOPT\_FTPASCII was a deprecated constant, alias of CURLOPT\_TRANSFERTEXT and 
         REGISTER_CURL_CONSTANT(CURLOPT_HEADERFUNCTION);
         REGISTER_CURL_CONSTANT(CURLOPT_MAXREDIRS);
         REGISTER_CURL_CONSTANT(CURLOPT_MAXCONNECTS);
-```
+{% endhighlight %}
 
 ## The Openssl extension
 openssl/lhash.h implements a dynamic hash tables systems, but nowaday versions gives the ability to specity types of tables: the macro changed and the PHP extension needs to be adjusted accordingly.
 
-```diff
+{% highlight diff %}
 --- openssl.c.orig      2012-11-15 13:54:21.228464238 +0100
 +++ openssl.c   2012-11-15 13:55:21.010589034 +0100
 @@ -203,8 +203,8 @@
@@ -72,14 +73,14 @@ openssl/lhash.h implements a dynamic hash tables systems, but nowaday versions g
 +               LHASH_OF(CONF_VALUE) * config TSRMLS_DC)
  {
         X509V3_CTX ctx;
-```
+{% endhighlight %}
 
 ## The OCI extension
 If you want to add support of recent Oracle client, I strongly suggest you to ignore the 5.1 ext/oci extensions. It's way easier to grab the current [PECL][PECL] one: PHP needs to be compiled without OCI support, and once it's properly installed we use the pecl command to install a working OCI.
 
-```bash
+{% highlight bash %}
 bin/pecl install oci8
-```
+{% endhighlight %}
 
 [Curl include]: https://github.com/bagder/curl/blob/master/include/curl/curl.h
 [PECL]: http://pecl.php.net/

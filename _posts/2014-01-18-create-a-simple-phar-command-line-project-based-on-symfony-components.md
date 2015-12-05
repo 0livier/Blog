@@ -24,23 +24,23 @@ The dependencies will be downloaded using [composer](https://getcomposer.org). I
 Let's start by creating the project - we'll assume we're using 5.3+ in a \*nix environment - and the subdirectories where we'll put our code in.
 We'll abide by [PSR-0](http://www.php-fig.org/psr/psr-0/), [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2] (http://www.php-fig.org/psr/psr-2/) standards.
 
-```bash
+{% highlight bash %}
 mkdir ny-mail
 cd ny-mail
 mkdir -p app src/Greetings/{Command,Parser,Transport}
 wget http://getcomposer.org/composer.phar
 wget https://raw2.github.com/0livier/Season-s-Greetings/master/recipients.csv
-```
+{% endhighlight %}
 
 Create the following composer.json then install dependencies thanks to php composer.phar install. Additionally, replace the name with some twig so our mail
 template will be look like we're going to send personalized messages.
 
 <script src="http://gist-it.appspot.com/github/0livier/Season-s-Greetings/blob/master/composer.json?footer=minimal"></script>
 
-```bash
+{% highlight bash %}
 php composer.phar install
 sed -i "s/Hi, Susan Calvin/Happy new year 2014 {{ name }}/" vendor/zurb/ink-basic/basic.html
-```
+{% endhighlight %}
 
 ## Show me the code
 As we need to load recipients from a CVS file, let's create a really simple parser in src/Greetings/Parser/Csv.php.
@@ -63,9 +63,9 @@ in src/Greetings/GreetingsApplication which be itself called from the script app
 
 Voila ! We now have a working mailer that can be used as shown below:
 
-```bash
+{% highlight bash %}
 php app/console vendor/zurb/ink-basic/basic.html recipients.csv --username foo@bar.com -p CorrectHorseBatteryStaple
-```
+{% endhighlight %}
 
 ## PHAR Packaging
 
@@ -77,13 +77,13 @@ that will just ask for a simple configuration file.
 We'll go for that solution for our CLI application, starting by installing Box at the top directory of our project. You may see a warning
 like « Notice: The "phar.readonly" setting needs to be off to create Phars. » but we'll get around that later.
 
-```bash
+{% highlight bash %}
 curl -LSs http://box-project.org/installer.php | php
-```
+{% endhighlight %}
 
 Now let's create a file box.json - still at the top directory - which will tell Box what files to pick or not, that we have an entry point, name of resulting phar.
 
-```javascript
+{% highlight js %}
 {
     "directories": ["src", "vendor"],
     "blacklist": ["vendor/zurb/ink-basic/basic.html"],
@@ -91,24 +91,24 @@ Now let's create a file box.json - still at the top directory - which will tell 
     "main": "app/console",
     "output": "greetings.phar"
 }
-```
+{% endhighlight %}
 
 Just run
 
-```bash
+{% highlight bash %}
 php box.phar build
-```
+{% endhighlight %}
 
 and you should have a greetings.phar. If you had the warning mentioned earlier, you may need to do
 
-```bash
+{% highlight bash %}
 php -d phar.readonly=0 box.phar build
-```
+{% endhighlight %}
 
 You can now redistribute your command which will be called like that :
 
-```bash
+{% highlight bash %}
 php greetings.phar template.html recipients.csv --username foo@bar.com -p CorrectHorseBatteryStaple
-```
+{% endhighlight %}
 
 We got there ! If you see things to enhance or have questions on what I described here, feel free to comment below or [contact me](http://yet.another.linux-nerd.com/contact).
