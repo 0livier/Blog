@@ -14,7 +14,7 @@ You probably already use [Capistrano](https://github.com/capistrano/capistrano) 
 ## Sprite factory
 Combined images, also known as [CSS sprites](http://www.alistapart.com/articles/sprites) are a great way to minimize HTTP requests, and thus [speed up web sites](http://developer.yahoo.com/performance/rules.html#opt_images). This technique is effective but its maintenance can quickly turn into a nightmare if you do not have the proper tool to automatize it. The sprite-factory gem help you manage your sprites by automaticly combining them and producing the according CSS. If you're using Rails, add the gem to your Gemfile, create the following file to your lib/tasks directory as assets_resprite, put your sprites in app/assets/images/sprites/ and then call `rake assets:resprite` to obtain your assembled image and resulting CSS. You could also use [Guard](https://github.com/guard/guard) to automaticly update the output image whenever you add or update the sprites.
 
-```ruby
+{% highlight ruby %}
 # http://codeincomplete.com/posts/2011/8/6/sprite_factory_1_4_1/
 require 'sprite_factory'
 
@@ -30,7 +30,7 @@ namespace :assets do
   end
 
 end
-```
+{% endhighlight %}
 
 [[Sprite-factory @ github](https://github.com/jakesgordon/sprite-factory)]
 
@@ -55,7 +55,7 @@ display the HTML or text alternative.
 ## Twitter
 If you have to develop something on the Internet that is not static HTML, chances are that you'll want to tell about it : new products, new posts or the latest tagged version of your opensource software. With only a few lines to configure it and one more to post a status, the Twitter gem is very easy to use and has access to all the API : direct messages, mentions, saved search, etc.
 
-```ruby
+{% highlight ruby %}
 # initialization
 Twitter.configure do |config|
   config.consumer_key = YOUR_CONSUMER_KEY
@@ -65,7 +65,7 @@ Twitter.configure do |config|
 end
 
 Twitter.update "Hi there !"
-```
+{% endhighlight %}
 
 [[Twitter @ github](https://github.com/jnunemaker/twitter)]
 

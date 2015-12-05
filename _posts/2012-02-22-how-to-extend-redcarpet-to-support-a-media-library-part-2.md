@@ -1,7 +1,7 @@
 ---
 layout: post
-excerpt: second half of this two-part tutorial thatexplains how to modify Redcarpet library in order to support images and files of a media library
-title: Extend redcarpet to support a media library - part 2
+excerpt: This is the second half of this two-part tutorial that explains how to modify Redcarpet library in order to support images and files of a media library
+title: Extend redcarpet to support a media library 2/2
 ---
 
 <div class="alert alert-info">
@@ -19,27 +19,27 @@ will allow you to upload images or write content.
 ## Markdown syntax for images and links 
 The Markdown link and image syntax are similar : 
 
-```
+{% highlight html %}
 [Here is a link.](http://linux-nerd.com)
-```
+{% endhighlight %}
 
 will produce
 
-```
+{% highlight html %}
 <a href="http://linux-nerd.com">Here is a link.</a>
-```
+{% endhighlight %}
 
 and
 
-```html
+{% highlight html %}
 ![my avatar](http://lol.cat/1p)
-```
+{% endhighlight %}
 
 will output
 
-```html
+{% highlight html %}
 <img src="http://lol.cat/1p" alt="my avatar"/>
-```
+{% endhighlight %}
 
 That syntax works for external resources and we need to find a way to specify our images while keeping that syntax working as  still
 
@@ -52,35 +52,35 @@ the filename is only constituted by letters or numbers and
 punctuation, we'll look in database for a match. If none is found,
 we'll use the string for the URL, unmodified :
 
-```markdown
+{% highlight html %}
 ![A wonderful lolcat identified by the id 3](3)
 [Click here to download report referenced by its filename](export.pdf)
-```
+{% endhighlight %}
 
 We'll enhance the integration with Paperclip by adding the size. To differentiate the file id from the size parameter, we'll separate them by a pipe :
 
-```markdown
+{% highlight html %}
 ![A wonderful lolcat identified by the id 3](3|thumb)
 [Click here to download report referenced by its filename, the original size is implied](export.pdf)
-```
+{% endhighlight %}
 
 It's often nice to use HTML class attribute for images within content and we'll continue to use a pipe separator.
 
-```markdown
+{% highlight html %}
 ![A wonderful lolcat identified by the id 3](3|thumb|right illustration)
-```
+{% endhighlight %}
 
 We could write the following regexp : the first captured text will be the id, the optional second capture the size and the last optional capture will be HTML classes.
 
-```ruby
+{% highlight ruby %}
 /^([-\w\d\.]+)(?:\|(\w+))?(?:\|([-\w\s\d]+))?$/
-```
+{% endhighlight %}
 
 ## Adding support into Redcarpet
 
 Our helper will use a new class, that extends the default Redcarpet renderer and override the methods for image and links.
 
-```ruby
+{% highlight ruby %}
 module RedcarpetHelper
   def redcarpet_render(content)
     @@markdown ||= Redcarpet::Markdown.new(HTMLBlockCode, :fenced_code_blocks => true)
@@ -134,28 +134,28 @@ class HTMLBlockCode < Redcarpet::Render::HTML
     link_to(content, link, :title => title, :class => klass)
   end
 end
-```
+{% endhighlight %}
 
 # Possible enhancements
 ## Add support for other resources
 In our Blog example and its PostController, you may want to link other posts or another model you have, but with the default Redcarpet renderer the only way to do it is to use a absolute URL : something like /controler/action/id. It's not a perennial way as URLs / routes may change. One way to address that problem is to extend or replace the pattern we defined earlier. A possible notation could be :
 
-```markdown
+{% highlight html %}
 [See my model](model_name:id)
-```
+{% endhighlight %}
 
 ## Add support for your own markup
 Wordpress has a handy feature, called shortcode, that allow editor to add content, external or internal - e.g. include a tweet using its id, embed a video from Youtube or a Google Documents Spreadsheet - with simple syntax like 
 
-```
+{% highlight html %}
 [tweet 168468146263560192] 
-```
+{% endhighlight %}
 
 Such functionality could easily be added to Redcarpet, using the `preprocess` function.
 
-```ruby
+{% highlight ruby %}
   def preprocess(full_document)
     full_document.gsub!(/\[tweet (\d+)\]/) {|m| Tweet.to_html(m[1]) }
     full_document
   end
-```
+{% endhighlight %}
