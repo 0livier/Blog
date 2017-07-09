@@ -5,6 +5,6 @@ image: /images/old/solid.png
 ---
 <div class="embed-container">
     <div class="embed large">
-    <iframe src="https://catchy.io/slides/Write-Rock-SOLID-Code.html"></iframe>
+    <iframe src="/slides/Write-Rock-SOLID-Code.html"></iframe>
     </div>
 </div>
